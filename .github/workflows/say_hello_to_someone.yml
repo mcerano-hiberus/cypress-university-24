@@ -1,0 +1,15 @@
+name: (Tutorial) Say hello to someone
+on: 
+  workflow_dispatch:
+    inputs:
+      name:
+        description: Your name!
+        required: true
+jobs:
+  say-hello-to-someone:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Introduce myself
+        run: echo "Hey! I'm Github Actions, I want to say something"
+      - name: Say hello
+        run: echo "Hello ${{ inputs.name }}, it's nice to meet you!"
